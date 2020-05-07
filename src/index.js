@@ -8,8 +8,6 @@ const cors = require('cors');
 
 const app = express();
 
-app.use(cors());//deixei livre para qualque pessoa usar
-
 mongoose.connect(
     process.env.MONGO_URL,
     {
@@ -17,7 +15,7 @@ mongoose.connect(
         useUnifiedTopology: true
     }
 );
-
+app.use(cors());//deixei livre para qualque pessoa usar
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(morgan("dev"));
