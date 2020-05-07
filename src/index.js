@@ -8,7 +8,7 @@ const cors = require('cors');
 
 const app = express();
 
-app.use(cors());
+app.use(cors());//deixei livre para qualque pessoa usar
 
 mongoose.connect(
     process.env.MONGO_URL,
